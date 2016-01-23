@@ -45,14 +45,13 @@
   <ItemGroup>
     <Compile Include="cpuChoice.cs" />
     <Compile Include="multiPlayerOptions.cs" />
-    <Compile Include="playerChoice.cs" />
     <Compile Include="playerNames.cs" />
-    <Compile Include="playerOneResponses.cs" />
     <Compile Include="playerOneTurn.cs" />
     <Compile Include="playerTwoTurn.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="randomNumberGenerator.cs" />
+    <Compile Include="prompts.cs" />
     <Compile Include="results.cs" />
   </ItemGroup>
   <ItemGroup>

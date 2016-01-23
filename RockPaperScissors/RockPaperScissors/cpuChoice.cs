@@ -8,43 +8,19 @@ namespace RockPaperScissors
 {
     public class cpuChoice : randomNumberGenerator
     {
-        private enum options
+        public enum options
         {
             ROCK, PAPER, SCISSORS
         }
         public string randomChoice()
         {
-            string[] names = Enum.GetNames(typeof(options));
+            int randomChoice = calcRandomNumber();
 
-            Random random = new Random();
+            string[] cpuChoice = Enum.GetNames(typeof(options));
 
-            int randomChoice = random.Next(names.Length);
-
-            var cpuOutput = Enum.Parse(typeof(options), names[randomChoice]);
+            var cpuOutput = Enum.Parse(typeof(options), cpuChoice[randomChoice]);
 
             return cpuOutput.ToString();
         }
     }
 }
-
-
-    /* int responseIndex = calcRandomNumber();
-            string cpuOutput;
-
-            switch (responseIndex)
-            {
-                case 1:
-                    cpuOutput = "ROCK";
-                    break;
-                case 2:
-                    cpuOutput = "PAPER";
-
-                    break;
-                case 3:
-                    cpuOutput = "SCISSORS";
-                    break;
-
-            }
-            return cpuOutput;
-            }
-             */

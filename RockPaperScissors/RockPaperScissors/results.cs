@@ -6,55 +6,50 @@ using System.Threading.Tasks;
 
 namespace RockPaperScissors
 {
-    class results
+    public class results : prompts
     {
         public void gameResults(string result1, string result2, string playerOneName, string playerTwoName)
         {
-            if (result1 == "ROCK" && result2 == "ROCK")
+            int playerOneScore = 0;
+            int playerTwoScore = 0;
+
+            if (result1 == "ROCK" && result2 == "PAPER")
             {
-                Console.WriteLine(playerOneName + " chose: " + result1 + "\n" + playerTwoName + " chose: " + result2 + "\nIT'S A DRAW!");
-                Console.ReadLine();
+                playerTwoWins(result1, result2, playerOneName, playerTwoName);
+                playerTwoScore++;
+                
             }
-            else if (result1 == "ROCK" && result2 == "PAPER")
+            else if (result1 == "ROCK" && result2 == "SCISSORS")
             {
-                Console.WriteLine(playerOneName + " chose: " + result1 + "\n" + playerTwoName + " chose: " + result2 + "\n" + playerTwoName + " WINS!");
-                Console.ReadLine();
+                playerOneWins(result1, result2, playerOneName, playerTwoName);
+                playerOneScore++;
             }
-            else if (result1.ToString() == "ROCK" && result2.ToString() == "SCISSORS")
+            else if (result1 == "PAPER" && result2 == "ROCK")
             {
-                Console.WriteLine(playerOneName + " chose: " + result1 + "\n" + playerTwoName + " chose: " + result2 + "\n" + playerOneName + " WINS!");
-                Console.ReadLine();
+                playerOneWins(result1, result2, playerOneName, playerTwoName);
+                playerOneScore++;
             }
-            else if (result1.ToString() == "PAPER" && result2.ToString() == "ROCK")
+            else if (result1 == "PAPER" && result2 == "SCISSORS")
             {
-                Console.WriteLine(playerOneName + " chose: " + result1 + "\n" + playerTwoName + " chose: " + result2 + "\n" + playerOneName + " WINS!");
-                Console.ReadLine();
+                playerTwoWins(result1, result2, playerOneName, playerTwoName);
+                playerTwoScore++;
             }
-            else if (result1.ToString() == "PAPER" && result2.ToString() == "PAPER")
+            else if (result1 == "SCISSORS" && result2 == "ROCK")
             {
-                Console.WriteLine(playerOneName + " chose: " + result1 + "\n" + playerTwoName + " chose: " + result2 + "\nIT'S A DRAW!");
-                Console.ReadLine();
+                playerTwoWins(result1, result2, playerOneName, playerTwoName);
+                playerTwoScore++;
             }
-            else if (result1.ToString() == "PAPER" && result2.ToString() == "SCISSORS")
+            else if (result1 == "SCISSORS" && result2 == "PAPER")
             {
-                Console.WriteLine(playerOneName + " chose: " + result1 + "\n" + playerTwoName + " chose: " + result2 + "\n" + playerTwoName + " WINS!");
-                Console.ReadLine();
+                playerOneWins(result1, result2, playerOneName, playerTwoName);
+                playerOneScore++;
             }
-            else if (result1.ToString() == "SCISSORS" && result2.ToString() == "ROCK")
+            else
             {
-                Console.WriteLine(playerOneName + " chose: " + result1 + "\n" + playerTwoName + " chose: " + result2 + "\n" + playerTwoName + " WINS!");
-                Console.ReadLine();
+                tie(result1, result2, playerOneName, playerTwoName);
             }
-            else if (result1.ToString() == "SCISSORS" && result2.ToString() == "PAPER")
-            {
-                Console.WriteLine(playerOneName + " chose: " + result1 + "\n" + playerTwoName + " chose: " + result2 + "\n" + playerOneName + " WINS!");
-                Console.ReadLine();
-            }
-            else if (result1.ToString() == "SCISSORS" && result2.ToString() == "SCISSORS")
-            {
-                Console.WriteLine(playerOneName + " chose: " + result1 + "\n" + playerTwoName + " chose: " + result2 + "\nIT'S A DRAW!");
-                Console.ReadLine();
-            }
+
+            keepScore(playerOneName, playerTwoName, playerOneScore, playerTwoScore);
         }
     }
 }

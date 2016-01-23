@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RockPaperScissors
 {
-    public class playerOneTurn : playerChoice
+    public class playerOneTurn : prompts
     {
         public string goPlayerOne(string playerOneName)
         {

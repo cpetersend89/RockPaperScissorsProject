@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RockPaperScissors
 {
-    public class playerNames : randomNumberGenerator
+    public class playerNames
     {
         public string playerOneName()
         {
