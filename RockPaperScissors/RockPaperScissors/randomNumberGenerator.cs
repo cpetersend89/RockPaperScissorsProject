@@ -11,7 +11,7 @@ namespace RockPaperScissors
         public int calcRandomNumber ()
         {
             Random numberGenerator = new Random();
-            int responseIndex = numberGenerator.Next(1, 4);
+            int responseIndex = numberGenerator.Next(0, 5);
             return responseIndex;
         }
     }

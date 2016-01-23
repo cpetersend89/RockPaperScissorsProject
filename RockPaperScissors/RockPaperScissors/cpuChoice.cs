@@ -10,7 +10,7 @@ namespace RockPaperScissors
     {
         public enum options
         {
-            ROCK, PAPER, SCISSORS
+            ROCK, PAPER, SCISSORS, LIZARD, SPOCK
         }
         public string randomChoice()
         {

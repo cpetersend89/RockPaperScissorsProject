@@ -13,7 +13,19 @@ namespace RockPaperScissors
         {
             bool playAgain = true;
 
+            Rock rock = new Rock();
+            rock.rockRules();
+            Paper paper = new Paper();
+            paper.paperRules();
+            Scissors scissors = new Scissors();
+            scissors.scissorsRules();
+            Lizard lizard = new Lizard();
+            lizard.lizardRules();
+            Spock spock = new Spock();
+            spock.spockRules();
 
+            prompts startGame = new prompts();
+            startGame.startGame();
 
                     multiPlayerOptions multiPlayerOptions = new multiPlayerOptions();
                     int selectedPlayers = multiPlayerOptions.setPlayers();

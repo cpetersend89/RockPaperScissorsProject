@@ -1,0 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace RockPaperScissors
+{
+    class Spock
+    {
+        public void spockRules()
+        {
+            Console.WriteLine("SPOCK BEATS SCISSORS AND ROCK");
+        }
+    }
+}

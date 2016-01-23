@@ -13,43 +13,43 @@ namespace RockPaperScissors
             int playerOneScore = 0;
             int playerTwoScore = 0;
 
-            if (result1 == "ROCK" && result2 == "PAPER")
+            if (result1 == result2)
             {
-                playerTwoWins(result1, result2, playerOneName, playerTwoName);
-                playerTwoScore++;
-                
+                tie(result1, result2, playerOneName, playerTwoName);
             }
-            else if (result1 == "ROCK" && result2 == "SCISSORS")
+            else if (result1 == "ROCK" && result2 == "SCISSORS" || result2 == "LIZARD")
+            {
+                playerOneWins(result1, result2, playerOneName, playerTwoName);
+                playerOneScore++; 
+            }
+            else if (result1 == "PAPER" && result2 == "ROCK" || result2 == "SPOCK")
             {
                 playerOneWins(result1, result2, playerOneName, playerTwoName);
                 playerOneScore++;
             }
-            else if (result1 == "PAPER" && result2 == "ROCK")
+            else if (result1 == "SCISSORS" && result2 == "PAPER" || result2 == "LIZARD")
             {
                 playerOneWins(result1, result2, playerOneName, playerTwoName);
                 playerOneScore++;
             }
-            else if (result1 == "PAPER" && result2 == "SCISSORS")
+            else if (result1 == "LIZARD" && result2 == "PAPER" || result2 == "SPOCK")
             {
-                playerTwoWins(result1, result2, playerOneName, playerTwoName);
-                playerTwoScore++;
+                playerOneWins(result1, result2, playerOneName, playerTwoName);
+                playerOneScore++;
             }
-            else if (result1 == "SCISSORS" && result2 == "ROCK")
-            {
-                playerTwoWins(result1, result2, playerOneName, playerTwoName);
-                playerTwoScore++;
-            }
-            else if (result1 == "SCISSORS" && result2 == "PAPER")
+            else if (result1 == "SPOCK" && result2 == "ROCK" || result2 == "SCISSORS")
             {
                 playerOneWins(result1, result2, playerOneName, playerTwoName);
                 playerOneScore++;
             }
             else
             {
-                tie(result1, result2, playerOneName, playerTwoName);
+                playerTwoWins(result1, result2, playerOneName, playerTwoName);
+                playerTwoScore++;
             }
 
-            keepScore(playerOneName, playerTwoName, playerOneScore, playerTwoScore);
+            string scores = "\n\nSCORES:\t" + playerOneName + ":\t" + playerOneScore + "\t" + playerTwoName + ":\t" + playerTwoScore;
+            System.IO.File.WriteAllText(@"C:\Users\Christian Petersen\Documents\Visual Studio 2015\Projects\RockPaperScissors\test.txt", scores);
         }
     }
 }

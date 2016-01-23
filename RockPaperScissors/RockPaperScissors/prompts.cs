@@ -8,9 +8,15 @@ namespace RockPaperScissors
 {
     public class prompts
     {
+        public void startGame()
+        {
+            Console.WriteLine("Press any key to start game:");
+            Console.ReadKey();
+            Console.Clear();
+        }
         public void playerQuestions()
         {
-            Console.WriteLine("Choose between ROCK, PAPER, and SCISSORS.");
+            Console.WriteLine("Choose between ROCK, PAPER, SCISSORS, LIZARD, and SPOCK.");
         }
         public void playerOneWins(string result1, string result2, string playerOneName, string playerTwoName)
         {
