@@ -10,7 +10,7 @@ namespace RockPaperScissors
     {
         public void startGame()
         {
-            Console.WriteLine("Press any key to start game:");
+            Console.WriteLine("\n\nPress any key to start game:");
             Console.ReadKey();
             Console.Clear();
         }
@@ -35,7 +35,7 @@ namespace RockPaperScissors
 
         public void keepScore(string playerOneName, string playerTwoName, int playerOneScore, int playerTwoScore)
         {
-        Console.WriteLine("\n\nSCORES:\t" + playerOneName + ":\t{0}\t" + playerTwoName + ":\t{1}", playerOneScore, playerTwoScore);
+        Console.WriteLine("\n\nSCORES:\t" + playerOneName + ":\t{0}\t" + playerTwoName + ":\t{1}", playerOneScore++, playerTwoScore++);
         }
     }
 }
